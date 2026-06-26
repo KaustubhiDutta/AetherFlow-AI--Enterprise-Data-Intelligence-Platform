@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AetherFlow AI | Intelligent Data Pipelines for the AI Era</title>
+    <meta content="AetherFlow AI: Real-time data intelligence and pipeline monitoring for modern data teams." name="description"/>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aetherflow.ai/"/>
+    
+    <!-- Robots -->
+    <meta name="robots" content="index,follow"/>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AetherFlow AI | Intelligent Data Pipelines for the AI Era"/>
+    <meta property="og:description" content="Upload, clean, analyze, and monitor your data with AI-powered intelligence. No coding required."/>
+    <meta property="og:image" content="https://aetherflow.ai/og-image.jpg"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://aetherflow.ai/"/>
+    <meta property="og:site_name" content="AetherFlow AI"/>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        'arctic-powder': '#F1F6F4',
+                        'mystic-mint': '#D9E8E2',
+                        'forsythia': '#FFC801',
+                        'deep-saffron': '#FF9932',
+                        'nocturnal': '#114C5A',
+                        'oceanic-noir': '#172B36',
+                        'background': '#F1F6F4',
+                        'surface': '#F1F6F4',
+                        'surface-container': '#D9E8E2',
+                        'surface-container-low': '#E8F0EC',
+                        'surface-container-high': '#CDDDD6',
+                        'primary': '#FFC801',
+                        'primary-container': '#FFC801',
+                        'secondary': '#FF9932',
+                        'secondary-container': '#FF9932',
+                        'on-background': '#114C5A',
+                        'on-surface': '#114C5A',
+                        'on-surface-variant': '#3A6B78',
+                        'on-primary': '#114C5A',
+                        'on-primary-container': '#114C5A',
+                        'on-secondary': '#FFFFFF',
+                        'on-secondary-container': '#FFFFFF',
+                        'inverse-surface': '#172B36',
+                        'inverse-on-surface': '#F1F6F4',
+                        'surface-tint': '#FFC801',
+                        'outline': '#8AA8B0',
+                        'outline-variant': '#C5D6D0',
+                        'error': '#D32F2F',
+                        'error-container': '#FFE4E4',
+                        'on-error': '#FFFFFF',
+                        'on-error-container': '#B71C1C',
+                        'tertiary': '#4A7A8A',
+                        'tertiary-container': '#C5E0E8',
+                        'on-tertiary': '#FFFFFF',
+                        'on-tertiary-container': '#0A3D4A',
+                    },
+                    borderRadius: {
+                        DEFAULT: '0.25rem',
+                        lg: '0.5rem',
+                        xl: '0.75rem',
+                        '2xl': '1rem',
+                        full: '9999px'
+                    },
+                    spacing: {
+                        'stack-xl': '48px',
+                        'gutter': '24px',
+                        'container-max': '1280px',
+                        'stack-sm': '4px',
+                        'stack-lg': '24px',
+                        'margin-desktop': '64px',
+                        'stack-md': '12px',
+                        'margin-mobile': '20px',
+                        'base': '8px'
+                    },
+                    fontFamily: {
+                        'display-lg-mobile': ['JetBrains Mono'],
+                        'code-sm': ['JetBrains Mono'],
+                        'body-md': ['Inter'],
+                        'body-lg': ['Inter'],
+                        'headline-md': ['JetBrains Mono'],
+                        'label-xs': ['Inter'],
+                        'button': ['Inter'],
+                        'display-lg': ['JetBrains Mono'],
+                        'stats-lg': ['JetBrains Mono']
+                    },
+                    fontSize: {
+                        'display-lg-mobile': ['32px', {'lineHeight': '1.2', 'fontWeight': '700'}],
+                        'code-sm': ['13px', {'lineHeight': '1.4', 'fontWeight': '400'}],
+                        'body-md': ['16px', {'lineHeight': '1.5', 'fontWeight': '400'}],
+                        'body-lg': ['18px', {'lineHeight': '1.6', 'fontWeight': '400'}],
+                        'headline-md': ['24px', {'lineHeight': '1.3', 'fontWeight': '600'}],
+                        'label-xs': ['12px', {'lineHeight': '1.0', 'fontWeight': '500'}],
+                        'button': ['14px', {'lineHeight': '1.0', 'letterSpacing': '0.01em', 'fontWeight': '600'}],
+                        'display-lg': ['48px', {'lineHeight': '1.1', 'letterSpacing': '-0.02em', 'fontWeight': '700'}],
+                        'stats-lg': ['32px', {'lineHeight': '1.0', 'fontWeight': '500'}]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #F1F6F4;
+            color: #114C5A;
+        }
+        .dark body {
+            background: #172B36;
+            color: #F1F6F4;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Glassmorphism */
+        .glass-panel {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background: rgba(241, 246, 244, 0.75);
+            border: 1px solid rgba(17, 76, 90, 0.06);
+        }
+        .dark .glass-panel {
+            background: rgba(23, 43, 54, 0.75);
+            border-color: rgba(241, 246, 244, 0.06);
+        }
+
+        /* Premium Card */
+        .premium-card {
+            background: rgba(217, 232, 226, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(17, 76, 90, 0.06);
+            box-shadow: 0 1px 3px rgba(17, 76, 90, 0.04), 0 8px 32px rgba(17, 76, 90, 0.04);
+            transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        box-shadow 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        border-color 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .dark .premium-card {
+            background: rgba(23, 43, 54, 0.6);
+            border-color: rgba(241, 246, 244, 0.06);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 8px 32px rgba(0,0,0,0.2);
+        }
+        .premium-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 4px 16px rgba(17, 76, 90, 0.06), 0 16px 56px rgba(17, 76, 90, 0.06);
+            border-color: rgba(17, 76, 90, 0.12);
+        }
+
+        /* Upload Zone */
+        .upload-zone {
+            border: 2px dashed rgba(17, 76, 90, 0.15);
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            background: rgba(241, 246, 244, 0.5);
+        }
+        .dark .upload-zone {
+            border-color: rgba(241, 246, 244, 0.1);
+            background: rgba(23, 43, 54, 0.3);
+        }
+        .upload-zone:hover {
+            border-color: #FFC801;
+            background: rgba(255, 200, 1, 0.05);
+            transform: translateY(-2px);
+        }
+        .upload-zone.dragover {
+            border-color: #FFC801;
+            background: rgba(255, 200, 1, 0.08);
+            transform: scale(1.02);
+        }
+
+        /* Terminal Logs */
+        .terminal-log {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 2;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: logEntry 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        .terminal-log.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        @keyframes logEntry {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(17, 76, 90, 0.1);
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+        }
+        .dark .progress-bar {
+            background: rgba(241, 246, 244, 0.1);
+        }
+        .progress-bar .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFC801, #FF9932);
+            border-radius: 9999px;
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Success Cards */
+        .success-card {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .success-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Dashboard Widgets */
+        .dashboard-widget {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .dashboard-widget.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(255, 200, 1, 0.1);
+            border-top-color: #FFC801;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Pulse Dot */
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #27C93F;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.6); }
+        }
+
+        /* Feature Card */
+        .feature-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(17, 76, 90, 0.06);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .dark .feature-card {
+            background: rgba(23, 43, 54, 0.7);
+            border-color: rgba(241, 246, 244, 0.06);
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #FFC801, #FF9932);
+            opacity: 0;
+            transition: opacity 400ms ease;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(17, 76, 90, 0.08);
+            border-color: rgba(255, 200, 1, 0.2);
+        }
+        .feature-card .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 200, 1, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(-5deg);
+            background: rgba(255, 200, 1, 0.2);
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-item { opacity: 0; transform: translateY(30px); }
+        .stagger-item.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Navigation */
+        .nav-dynamic {
+            transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .nav-scrolled {
+            background: rgba(241, 246, 244, 0.82);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(17, 76, 90, 0.06);
+            box-shadow: 0 1px 4px rgba(17, 76, 90, 0.04);
+        }
+        .dark .nav-scrolled {
+            background: rgba(23, 43, 54, 0.82);
+            border-bottom: 1px solid rgba(241, 246, 244, 0.04);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 200ms ease;
+            color: #3A6B78;
+        }
+        .dark .nav-link {
+            color: #8AA8B0;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #FFC801;
+            transition: width 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        left 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Canvas */
+        #hero-canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        .dark #hero-canvas-container {
+            opacity: 0.15;
+        }
+
+        .icon-small { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
+        .icon-md { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
+        .icon-lg { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .mobile-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 40;
+            background: #FFC801;
+            color: #114C5A;
+        }
+        .dark .back-to-top {
+            color: #172B36;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .stat-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        .gradient-glow {
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 200, 1, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .dark .gradient-glow {
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 200, 1, 0.03) 0%, transparent 70%);
+        }
+
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(17, 76, 90, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(17, 76, 90, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .dark .grid-bg {
+            background-image: 
+                linear-gradient(rgba(241, 246, 244, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(241, 246, 244, 0.02) 1px, transparent 1px);
+        }
+
+        *:focus-visible {
+            outline: 2px solid #FFC801;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { 
+            background: rgba(17, 76, 90, 0.2);
+            border-radius: 9999px;
+        }
+        .dark ::-webkit-scrollbar-thumb { 
+            background: rgba(241, 246, 244, 0.12);
+        }
+
+        .float-1 { animation: float1 8s ease-in-out infinite; }
+        .float-2 { animation: float2 10s ease-in-out infinite; }
+        
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.15; }
+            33% { transform: translateY(-24px) rotate(3deg) scale(1.05); opacity: 0.2; }
+            66% { transform: translateY(12px) rotate(-2deg) scale(0.95); opacity: 0.1; }
+        }
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.15; }
+            50% { transform: translateY(-20px) rotate(-4deg) scale(1.06); opacity: 0.25; }
+        }
+
+        .hover-lift {
+            transition: transform 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .hover-lift:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(17, 76, 90, 0.06);
+        }
+        .dark .hover-lift:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .section-transition {
+            position: relative;
+        }
+        .section-transition::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(17, 76, 90, 0.06), transparent);
+        }
+        .dark .section-transition::before {
+            background: linear-gradient(to right, transparent, rgba(241, 246, 244, 0.04), transparent);
+        }
+
+        /* Partner Carousel */
+        .partner-track {
+            display: flex;
+            animation: scrollPartners 20s linear infinite;
+            width: max-content;
+        }
+        .partner-track:hover {
+            animation-play-state: paused;
+        }
+        .partner-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 48px;
+            white-space: nowrap;
+            opacity: 0.5;
+            transition: opacity 300ms ease, transform 300ms ease;
+            color: #114C5A;
+        }
+        .dark .partner-item {
+            color: #F1F6F4;
+        }
+        .partner-item:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        @keyframes scrollPartners {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .partner-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(17, 76, 90, 0.15);
+            transition: all 300ms ease;
+            cursor: pointer;
+        }
+        .dark .partner-dot {
+            background: rgba(241, 246, 244, 0.15);
+        }
+        .partner-dot.active {
+            background: #FFC801;
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(17, 76, 90, 0.06);
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px rgba(17, 76, 90, 0.04);
+            transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .dark .pricing-card {
+            background: rgba(23, 43, 54, 0.7);
+            border-color: rgba(241, 246, 244, 0.06);
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(17, 76, 90, 0.06);
+        }
+        .dark .pricing-card:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+        .pricing-card.featured {
+            border-color: #FFC801;
+            border-width: 2px;
+        }
+        .pricing-badge {
+            background: #FFC801;
+            color: #114C5A;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+        }
+        .dark .pricing-badge {
+            color: #172B36;
+        }
+
+        .check-icon {
+            color: #FFC801;
+            flex-shrink: 0;
+        }
+
+        .currency-btn {
+            transition: all 200ms ease;
+        }
+        .currency-btn.active {
+            background: #FFFFFF;
+            color: #114C5A;
+            box-shadow: 0 1px 4px rgba(17, 76, 90, 0.08);
+        }
+        .dark .currency-btn.active {
+            background: #172B36;
+            color: #F1F6F4;
+        }
+
+        /* Testimonial */
+        .testimonial-card {
+            transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(17, 76, 90, 0.06);
+        }
+        .dark .testimonial-card:hover {
+            box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+        }
+
+        /* FAQ */
+        .faq-item .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .faq-item.active .faq-content {
+            max-height: 300px;
+        }
+        .faq-item .faq-icon {
+            transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 nav-dynamic border-b border-transparent" id="main-nav" role="banner">
+        <nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" role="navigation" aria-label="Main navigation">
+            <div class="flex items-center gap-stack-md">
+                <span class="font-display-lg text-headline-md md:text-display-lg text-nocturnal dark:text-arctic-powder tracking-tighter">AetherFlow</span>
+                <span class="hidden md:inline-block text-[10px] font-code-sm text-forsythia bg-forsythia/10 px-2 py-0.5 rounded-full uppercase tracking-wider">AI</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-stack-lg">
+                <a class="nav-link font-body-md text-body-md" href="#demo" data-section="demo">How It Works</a>
+                <a class="nav-link font-body-md text-body-md" href="#features" data-section="features">Features</a>
+                <a class="nav-link font-body-md text-body-md" href="#pricing" data-section="pricing">Pricing</a>
+                <a class="nav-link font-body-md text-body-md" href="#testimonials" data-section="testimonials">Testimonials</a>
+                <a class="nav-link font-body-md text-body-md" href="#faq" data-section="faq">FAQ</a>
+                <img alt="Search" class="icon-small opacity-60 hover:opacity-100 cursor-pointer transition-opacity" src="/frontend/public/assets/icons/search.svg"/>
+            </div>
+            
+            <div class="flex items-center gap-stack-md">
+                <button class="p-2 rounded-full hover:bg-mystic-mint dark:hover:bg-oceanic-noir/30 transition-colors" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="w-5 h-5 text-nocturnal dark:text-arctic-powder" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                    </svg>
+                </button>
+                <button class="bg-forsythia text-nocturnal dark:text-oceanic-noir px-6 py-3 rounded-lg font-button text-button hover-lift shadow-sm">
+                    Get Started
+                </button>
+                
+                <button class="md:hidden p-2 rounded-lg hover:bg-mystic-mint dark:hover:bg-oceanic-noir/30 transition-colors" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <svg class="w-6 h-6 text-nocturnal dark:text-arctic-powder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-overlay fixed inset-0 z-40 bg-nocturnal/20 dark:bg-oceanic-noir/60" id="mobile-overlay"></div>
+        <div class="mobile-menu fixed top-0 right-0 h-full w-80 bg-arctic-powder dark:bg-oceanic-noir shadow-2xl z-50 p-8 flex flex-col" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-display-lg text-headline-md text-nocturnal dark:text-arctic-powder">AetherFlow</span>
+                <button class="p-2 rounded-lg hover:bg-mystic-mint dark:hover:bg-oceanic-noir/30 transition-colors" id="mobile-close" aria-label="Close menu">
+                    <svg class="w-6 h-6 text-nocturnal dark:text-arctic-powder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6">
+                <a class="font-body-lg text-body-lg text-nocturnal/70 dark:text-arctic-powder/70 hover:text-nocturnal dark:hover:text-arctic-powder transition-colors" href="#demo" data-section="demo">How It Works</a>
+                <a class="font-body-lg text-body-lg text-nocturnal/70 dark:text-arctic-powder/70 hover:text-nocturnal dark:hover:text-arctic-powder transition-colors" href="#features" data-section="features">Features</a>
+                <a class="font-body-lg text-body-lg text-nocturnal/70 dark:text-arctic-powder/70 hover:text-nocturnal dark:hover:text-arctic-powder transition-colors" href="#pricing" data-section="pricing">Pricing</a>
+                <a class="font-body-lg text-body-lg text-nocturnal/70 dark:text-arctic-powder/70 hover:text-nocturnal dark:hover:text-arctic-powder transition-colors" href="#testimonials" data-section="testimonials">Testimonials</a>
+                <a class="font-body-lg text-body-lg text-nocturnal/70 dark:text-arctic-powder/70 hover:text-nocturnal dark:hover:text-arctic-powder transition-colors" href="#faq" data-section="faq">FAQ</a>
+            </div>
+            <div class="mt-auto pt-8 border-t border-nocturnal/10 dark:border-arctic-powder/10">
+                <button class="w-full bg-forsythia text-nocturnal dark:text-oceanic-noir px-6 py-3 rounded-lg font-button text-button hover-lift">
+                    Get Started Free
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="pt-32" role="main">
+        <!-- Hero Section -->
+        <section class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-stack-xl min-h-[80vh] flex flex-col justify-center overflow-hidden" aria-labelledby="hero-title">
+            <div id="hero-canvas-container"></div>
+            <div class="gradient-glow absolute inset-0 -z-10"></div>
+            <div class="grid-bg absolute inset-0 -z-10 opacity-50"></div>
+            
+            <div class="float-1 absolute top-20 left-10 opacity-20 hidden lg:block">
+                <svg class="w-16 h-16 text-nocturnal dark:text-arctic-powder/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+            </div>
+            <div class="float-2 absolute bottom-20 right-10 opacity-20 hidden lg:block">
+                <svg class="w-12 h-12 text-nocturnal dark:text-arctic-powder/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+            </div>
+            
+            <div class="hero-badge active">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-forsythia/10 rounded-full mb-stack-md border border-forsythia/20 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="font-label-xs text-label-xs text-nocturnal dark:text-arctic-powder uppercase tracking-wider">AI Platform · Live</span>
+                </div>
+            </div>
+            
+            <h1 id="hero-title" class="hero-heading active font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md text-nocturnal dark:text-arctic-powder max-w-4xl mx-auto leading-tight">
+                Intelligent data pipelines <br class="hidden md:block"/>for the AI era.
+            </h1>
+            
+            <p class="hero-description active font-body-lg text-body-lg text-nocturnal/70 dark:text-arctic-powder/70 max-w-2xl mx-auto mb-stack-lg leading-relaxed">
+                Upload, clean, analyze, and monitor your data with AI-powered intelligence. <br class="hidden md:block"/>
+                No coding required.
+            </p>
+            
+            <div class="hero-cta active flex flex-col md:flex-row items-center justify-center gap-4 mb-stack-xl">
+                <button class="bg-forsythia text-nocturnal dark:text-oceanic-noir px-8 py-4 rounded-xl font-button text-button w-full md:w-auto shadow-lg hover-lift transition-all duration-200">
+                    Launch Dashboard
+                </button>
+                <button class="border-2 border-nocturnal dark:border-arctic-powder text-nocturnal dark:text-arctic-powder px-8 py-4 rounded-xl font-button text-button w-full md:w-auto flex items-center justify-center gap-2 hover:bg-nocturnal hover:text-arctic-powder dark:hover:bg-arctic-powder dark:hover:text-nocturnal transition-all duration-200 hover-lift">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    Watch Demo
+                </button>
+            </div>
+            
+            <div class="hero-stats active flex flex-wrap justify-center gap-8 md:gap-12 mt-8">
+                <div class="text-center">
+                    <div class="stat-number font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder" data-target="500">0</div>
+                    <span class="text-stats-lg text-nocturnal dark:text-arctic-powder">+</span>
+                    <p class="font-label-xs text-label-xs text-nocturnal/60 dark:text-arctic-powder/60 mt-1">Teams Deployed</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder" data-target="12">0</div>
+                    <span class="text-stats-lg text-nocturnal dark:text-arctic-powder">M+</span>
+                    <p class="font-label-xs text-label-xs text-nocturnal/60 dark:text-arctic-powder/60 mt-1">Records Processed</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder" data-target="99.99">0</div>
+                    <span class="text-stats-lg text-nocturnal dark:text-arctic-powder">%</span>
+                    <p class="font-label-xs text-label-xs text-nocturnal/60 dark:text-arctic-powder/60 mt-1">Pipeline Uptime</p>
+                </div>
+            </div>
+            
+            <!-- Terminal Dashboard Preview -->
+            <div class="hero-preview active mt-stack-xl">
+                <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl p-4 md:p-8">
+                    <div class="bg-oceanic-noir dark:bg-oceanic-noir/80 rounded-xl w-full aspect-video flex flex-col shadow-inner">
+                        <div class="h-10 border-b border-arctic-powder/10 flex items-center px-4 gap-2">
+                            <div class="flex gap-1.5">
+                                <div class="w-3 h-3 rounded-full bg-error opacity-80"></div>
+                                <div class="w-3 h-3 rounded-full bg-forsythia opacity-80"></div>
+                                <div class="w-3 h-3 rounded-full bg-tertiary opacity-80"></div>
+                            </div>
+                            <div class="ml-4 font-code-sm text-code-sm text-arctic-powder/60 bg-arctic-powder/5 px-3 py-1 rounded flex items-center gap-2">
+                                <img alt="Link" class="w-3 h-3 opacity-50" src="/frontend/public/assets/icons/link.svg"/>
+                                pipeline / production-eu
+                            </div>
+                            <span class="ml-auto text-[0.6rem] text-forsythia/50 font-code-sm">● AI ENGINE · v2.4.1</span>
+                        </div>
+                        <div class="flex-1 p-6 text-left">
+                            <div class="font-code-sm text-code-sm text-forsythia space-y-2">
+                                <p><span class="text-arctic-powder/40">analyzing:</span> "Q4_Sales_Report.xlsx"</p>
+                                <p class="pl-4"><span class="text-arctic-powder/40">cleaning:</span> 12,847 rows processed</p>
+                                <p class="pl-4"><span class="text-arctic-powder/40">insights:</span> 5 key patterns detected</p>
+                                <p class="pl-4 flex items-center gap-2"><span class="text-arctic-powder/40">status:</span> <span class="text-green-400">● Ready</span></p>
+                                <div class="h-24 md:h-32 w-full mt-6 bg-arctic-powder/5 rounded-xl border border-dashed border-arctic-powder/10 flex items-center justify-center">
+                                    <div class="flex gap-4 items-center">
+                                        <div class="flex -space-x-2">
+                                            <div class="w-10 h-10 rounded-full bg-forsythia/20 flex items-center justify-center text-xs border-2 border-arctic-powder/10">📊</div>
+                                            <div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-xs border-2 border-arctic-powder/10">📈</div>
+                                            <div class="w-10 h-10 rounded-full bg-arctic-powder/20 flex items-center justify-center text-xs border-2 border-arctic-powder/10">📋</div>
+                                        </div>
+                                        <span class="text-arctic-powder/60 text-sm font-code-sm">AI analysis complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Partners -->
+        <section class="py-stack-xl border-y border-nocturnal/10 dark:border-arctic-powder/10 overflow-hidden reveal section-transition" aria-label="Infrastructure partners">
+            <div class="text-center mb-stack-lg">
+                <p class="font-label-xs text-label-xs uppercase tracking-widest text-nocturnal/60 dark:text-arctic-powder/60">Trusted by industry leaders</p>
+                <div class="flex justify-center gap-2 mt-4" id="partner-dots">
+                    <span class="partner-dot active" data-index="0"></span>
+                    <span class="partner-dot" data-index="1"></span>
+                    <span class="partner-dot" data-index="2"></span>
+                    <span class="partner-dot" data-index="3"></span>
+                </div>
+            </div>
+            
+            <div class="overflow-hidden relative">
+                <div class="partner-track" id="partner-track">
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/cube-16-solid.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">CLOUDSTREAM</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/chart-pie.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">CORE.OS</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/cog-8-tooth.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">NEXUS</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/arrow-path.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">SYNAPSE</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/cube-16-solid.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">CLOUDSTREAM</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/chart-pie.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">CORE.OS</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/cog-8-tooth.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">NEXUS</span>
+                    </div>
+                    <div class="partner-item">
+                        <img class="icon-small" src="/frontend/public/assets/icons/arrow-path.svg"/>
+                        <span class="font-display-lg text-[20px] md:text-[24px]">SYNAPSE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- INTERACTIVE DEMO SECTION -->
+        <section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal section-transition" id="demo" aria-labelledby="demo-title">
+            <div class="text-center mb-stack-xl">
+                <span class="font-label-xs text-label-xs text-forsythia uppercase tracking-widest">Interactive Demo</span>
+                <h2 id="demo-title" class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mt-2">See AetherFlow AI in Action</h2>
+                <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60 max-w-2xl mx-auto mt-4">
+                    Experience the complete AI workflow — from upload to insights.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-center gap-4 mb-8">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-forsythia" id="step-dot-1"></div>
+                        <span class="text-xs font-medium text-nocturnal dark:text-arctic-powder" id="step-label-1">Upload</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-nocturnal/10 dark:bg-arctic-powder/10"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-nocturnal/20 dark:bg-arctic-powder/20" id="step-dot-2"></div>
+                        <span class="text-xs font-medium text-nocturnal/40 dark:text-arctic-powder/40" id="step-label-2">Processing</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-nocturnal/10 dark:bg-arctic-powder/10"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-nocturnal/20 dark:bg-arctic-powder/20" id="step-dot-3"></div>
+                        <span class="text-xs font-medium text-nocturnal/40 dark:text-arctic-powder/40" id="step-label-3">Results</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-nocturnal/10 dark:bg-arctic-powder/10"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-nocturnal/20 dark:bg-arctic-powder/20" id="step-dot-4"></div>
+                        <span class="text-xs font-medium text-nocturnal/40 dark:text-arctic-powder/40" id="step-label-4">Dashboard</span>
+                    </div>
+                </div>
+                
+                <!-- Demo Container -->
+                <div class="premium-card rounded-2xl p-6 md:p-8 relative overflow-hidden">
+                    <div class="min-h-[400px]">
+                        <!-- STEP 1: Upload -->
+                        <div id="step-upload" class="demo-step">
+                            <div class="upload-zone" id="upload-zone">
+                                <div class="flex flex-col items-center gap-4">
+                                    <div class="w-16 h-16 rounded-2xl bg-forsythia/10 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-forsythia" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-body-lg text-body-lg text-nocturnal dark:text-arctic-powder">Drag & Drop your CSV, Excel or JSON file</p>
+                                        <p class="font-body-md text-body-md text-nocturnal/40 dark:text-arctic-powder/40 mt-1">or click to browse</p>
+                                    </div>
+                                    <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-nocturnal/40 dark:text-arctic-powder/40">
+                                        <span class="px-3 py-1 bg-nocturnal/5 dark:bg-arctic-powder/5 rounded">CSV</span>
+                                        <span class="px-3 py-1 bg-nocturnal/5 dark:bg-arctic-powder/5 rounded">Excel</span>
+                                        <span class="px-3 py-1 bg-nocturnal/5 dark:bg-arctic-powder/5 rounded">JSON</span>
+                                        <span class="px-3 py-1 bg-nocturnal/5 dark:bg-arctic-powder/5 rounded">Google Sheets</span>
+                                    </div>
+                                    <button class="mt-4 px-8 py-3 bg-forsythia text-nocturnal dark:text-oceanic-noir rounded-xl font-button text-button hover:shadow-lg transition-all" id="upload-btn">
+                                        Upload Sample File
+                                    </button>
+                                    <p class="text-xs text-nocturnal/30 dark:text-arctic-powder/30">Demo only — no data is actually uploaded</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- STEP 2: Processing -->
+                        <div id="step-processing" class="demo-step" style="display:none;">
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder">Processing Your Data</h3>
+                                        <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60">AI is analyzing your dataset</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="pulse-dot"></span>
+                                        <span class="text-sm text-nocturnal/60 dark:text-arctic-powder/60 font-code-sm" id="progress-percent">0%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                </div>
+                                
+                                <div class="bg-oceanic-noir dark:bg-oceanic-noir/80 rounded-xl p-4 font-code-sm text-code-sm text-arctic-powder/80 min-h-[200px] overflow-y-auto" id="terminal-logs">
+                                    <div class="text-forsythia/50 mb-2">$ aether process --file sales_data.csv --ai-engine v2.4.1</div>
+                                    <div id="log-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- STEP 3: Results -->
+                        <div id="step-results" class="demo-step" style="display:none;">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="success-card premium-card rounded-xl p-4 text-center" data-delay="0">
+                                    <div class="text-3xl mb-2">✅</div>
+                                    <p class="font-body-md font-semibold text-nocturnal dark:text-arctic-powder">Data Cleaned</p>
+                                    <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">12,847 rows</p>
+                                </div>
+                                <div class="success-card premium-card rounded-xl p-4 text-center" data-delay="100">
+                                    <div class="text-3xl mb-2">🔄</div>
+                                    <p class="font-body-md font-semibold text-nocturnal dark:text-arctic-powder">Duplicates Removed</p>
+                                    <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">127 duplicates</p>
+                                </div>
+                                <div class="success-card premium-card rounded-xl p-4 text-center" data-delay="200">
+                                    <div class="text-3xl mb-2">📝</div>
+                                    <p class="font-body-md font-semibold text-nocturnal dark:text-arctic-powder">Missing Values Fixed</p>
+                                    <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">34 errors corrected</p>
+                                </div>
+                                <div class="success-card premium-card rounded-xl p-4 text-center" data-delay="300">
+                                    <div class="text-3xl mb-2">🧠</div>
+                                    <p class="font-body-md font-semibold text-nocturnal dark:text-arctic-powder">AI Insights Generated</p>
+                                    <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">5 key patterns</p>
+                                </div>
+                                <div class="success-card premium-card rounded-xl p-4 text-center" data-delay="400">
+                                    <div class="text-3xl mb-2">📊</div>
+                                    <p class="font-body-md font-semibold text-nocturnal dark:text-arctic-powder">Dashboard Ready</p>
+                                    <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">Real-time visualization</p>
+                                </div>
+                                <div class="success-card premium-card rounded-xl p-4 text-center border-2 border-forsythia" data-delay="500">
+                                    <div class="text-3xl mb-2">🎯</div>
+                                    <p class="font-body-md font-semibold text-nocturnal dark:text-arctic-powder">Analysis Complete</p>
+                                    <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">99.8% accuracy</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <button class="px-8 py-3 bg-forsythia text-nocturnal dark:text-oceanic-noir rounded-xl font-button text-button hover:shadow-lg transition-all" id="dashboard-btn">
+                                    View Dashboard →
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- STEP 4: Dashboard -->
+                        <div id="step-dashboard" class="demo-step" style="display:none;">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder">Live Dashboard</h3>
+                                    <span class="text-xs font-code-sm text-green-400 flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                                        Live
+                                    </span>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                                    <div class="dashboard-widget premium-card rounded-xl p-3 text-center" data-delay="0">
+                                        <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">Revenue</p>
+                                        <p class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder">$24.5K</p>
+                                        <p class="text-xs text-green-400">↑ 12.3%</p>
+                                    </div>
+                                    <div class="dashboard-widget premium-card rounded-xl p-3 text-center" data-delay="100">
+                                        <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">Pipeline Status</p>
+                                        <p class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder">3</p>
+                                        <p class="text-xs text-green-400">All healthy</p>
+                                    </div>
+                                    <div class="dashboard-widget premium-card rounded-xl p-3 text-center" data-delay="200">
+                                        <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">Data Quality</p>
+                                        <p class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder">98%</p>
+                                        <p class="text-xs text-green-400">↑ 2.4%</p>
+                                    </div>
+                                    <div class="dashboard-widget premium-card rounded-xl p-3 text-center" data-delay="300">
+                                        <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40">AI Confidence</p>
+                                        <p class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder">96%</p>
+                                        <p class="text-xs text-forsythia">High</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="dashboard-widget premium-card rounded-xl p-4" data-delay="400">
+                                        <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40 mb-2">Processing Summary</p>
+                                        <div class="space-y-1 text-sm font-code-sm text-nocturnal/60 dark:text-arctic-powder/60">
+                                            <div class="flex justify-between"><span>Records</span><span class="text-nocturnal dark:text-arctic-powder">12,847</span></div>
+                                            <div class="flex justify-between"><span>Cleaned</span><span class="text-nocturnal dark:text-arctic-powder">12,686</span></div>
+                                            <div class="flex justify-between"><span>Insights</span><span class="text-nocturnal dark:text-arctic-powder">5</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-widget premium-card rounded-xl p-4" data-delay="500">
+                                        <p class="text-xs text-nocturnal/40 dark:text-arctic-powder/40 mb-2">Recent Alerts</p>
+                                        <div class="space-y-1 text-sm">
+                                            <div class="flex items-center gap-2 text-green-400"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Pipeline healthy</div>
+                                            <div class="flex items-center gap-2 text-forsythia"><span class="w-1.5 h-1.5 rounded-full bg-forsythia"></span> New pattern detected</div>
+                                            <div class="flex items-center gap-2 text-green-400"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> All systems go</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-6">
+                                    <button class="px-6 py-2 border-2 border-nocturnal/20 dark:border-arctic-powder/20 rounded-xl font-button text-button text-nocturnal dark:text-arctic-powder hover:bg-nocturnal hover:text-arctic-powder dark:hover:bg-arctic-powder dark:hover:text-oceanic-noir transition-all" id="reset-demo">
+                                        Run Again
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal section-transition" id="features" aria-labelledby="features-title">
+            <div class="text-center mb-stack-xl">
+                <span class="font-label-xs text-label-xs text-forsythia uppercase tracking-widest">Features</span>
+                <h2 id="features-title" class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mt-2">Everything you need for AI-driven data operations</h2>
+                <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60 max-w-2xl mx-auto mt-4">
+                    Four powerful capabilities that work together to transform your data workflow.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <img alt="Data cleaning" class="w-6 h-6" src="/frontend/public/assets/icons/arrow-path.svg"/>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-sm font-semibold text-nocturnal dark:text-arctic-powder">Automated Data Cleansing</h3>
+                    <p class="font-body-md text-body-md text-sm text-nocturnal/60 dark:text-arctic-powder/60">AI-powered deduplication, error correction, and schema standardization with 99.8% accuracy.</p>
+                    <div class="mt-3 flex items-center gap-3 text-xs font-code-sm text-nocturnal/40 dark:text-arctic-powder/40">
+                        <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-400"></span> 99.8% accuracy</span>
+                        <span class="w-px h-4 bg-nocturnal/10 dark:bg-arctic-powder/10"></span>
+                        <span>2.3s avg. processing</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <img alt="AI insights" class="w-6 h-6" src="/frontend/public/assets/icons/cube-16-solid.svg"/>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-sm font-semibold text-nocturnal dark:text-arctic-powder">Real-time AI Insights</h3>
+                    <p class="font-body-md text-body-md text-sm text-nocturnal/60 dark:text-arctic-powder/60">Automatic pattern detection, anomaly flagging, and trend analysis in real-time.</p>
+                    <div class="mt-3 flex items-center gap-3 text-xs font-code-sm text-nocturnal/40 dark:text-arctic-powder/40">
+                        <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-forsythia"></span> 5+ pattern types</span>
+                        <span class="w-px h-4 bg-nocturnal/10 dark:bg-arctic-powder/10"></span>
+                        <span>Real-time analysis</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <img alt="Monitoring" class="w-6 h-6" src="/frontend/public/assets/icons/link-solid.svg"/>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-sm font-semibold text-nocturnal dark:text-arctic-powder">Live Pipeline Monitoring</h3>
+                    <p class="font-body-md text-body-md text-sm text-nocturnal/60 dark:text-arctic-powder/60">Real-time dashboard with metrics, logs, and system health status.</p>
+                    <div class="mt-3 flex items-center gap-3 text-xs font-code-sm text-nocturnal/40 dark:text-arctic-powder/40">
+                        <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-400"></span> 100% uptime</span>
+                        <span class="w-px h-4 bg-nocturnal/10 dark:bg-arctic-powder/10"></span>
+                        <span>Live metrics</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card stagger-item">
+                    <div class="feature-icon">
+                        <img alt="Security" class="w-6 h-6" src="/frontend/public/assets/icons/chevron-up.svg"/>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-sm font-semibold text-nocturnal dark:text-arctic-powder">Enterprise Security</h3>
+                    <p class="font-body-md text-body-md text-sm text-nocturnal/60 dark:text-arctic-powder/60">AES-256 encryption, SOC 2 compliance, and granular access controls.</p>
+                    <div class="mt-3 flex items-center gap-3 text-xs font-code-sm text-nocturnal/40 dark:text-arctic-powder/40">
+                        <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-400"></span> AES-256</span>
+                        <span class="w-px h-4 bg-nocturnal/10 dark:bg-arctic-powder/10"></span>
+                        <span>SOC 2 compliant</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Before vs After -->
+        <section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal section-transition" id="comparison" aria-labelledby="comparison-title">
+            <div class="text-center mb-stack-xl">
+                <span class="font-label-xs text-label-xs text-forsythia uppercase tracking-widest">The Difference</span>
+                <h2 id="comparison-title" class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mt-2">Before vs After AetherFlow</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="flex-1 premium-card rounded-2xl p-8 text-center">
+                    <div class="text-4xl mb-4">😰</div>
+                    <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mb-4">Before AI</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal/70 dark:text-arctic-powder/70">
+                            <span class="text-red-500 text-xl">✕</span> Manual data cleaning
+                        </li>
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal/70 dark:text-arctic-powder/70">
+                            <span class="text-red-500 text-xl">✕</span> Siloed data sources
+                        </li>
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal/70 dark:text-arctic-powder/70">
+                            <span class="text-red-500 text-xl">✕</span> Delayed insights
+                        </li>
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal/70 dark:text-arctic-powder/70">
+                            <span class="text-red-500 text-xl">✕</span> Human error
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="text-4xl text-forsythia flex-shrink-0">→</div>
+                
+                <div class="flex-1 premium-card rounded-2xl p-8 text-center border-2 border-forsythia">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mb-4">After AetherFlow</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal dark:text-arctic-powder">
+                            <span class="text-green-500 text-xl">✓</span> AI-powered automation
+                        </li>
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal dark:text-arctic-powder">
+                            <span class="text-green-500 text-xl">✓</span> Unified data pipelines
+                        </li>
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal dark:text-arctic-powder">
+                            <span class="text-green-500 text-xl">✓</span> Real-time insights
+                        </li>
+                        <li class="flex items-center gap-3 font-body-md text-nocturnal dark:text-arctic-powder">
+                            <span class="text-green-500 text-xl">✓</span> 99.98% accuracy
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal section-transition" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="text-center mb-stack-xl">
+                <span class="font-label-xs text-label-xs text-forsythia uppercase tracking-widest">Testimonials</span>
+                <h2 id="testimonials-title" class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mt-2">Loved by data teams everywhere</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="testimonial-card premium-card rounded-2xl p-6 stagger-item">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-forsythia/20 flex items-center justify-center text-nocturnal dark:text-arctic-powder font-bold text-lg flex-shrink-0">JD</div>
+                        <div>
+                            <p class="font-body-md font-bold text-nocturnal dark:text-arctic-powder">Jane Doe</p>
+                            <p class="font-label-xs text-label-xs text-nocturnal/60 dark:text-arctic-powder/60">CTO, CloudStream</p>
+                        </div>
+                    </div>
+                    <div class="flex text-forsythia mb-3">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                    <p class="font-body-md text-nocturnal/80 dark:text-arctic-powder/80 italic">"AetherFlow reduced our pipeline monitoring time from hours to minutes. The real-time insights are incredible."</p>
+                </div>
+                
+                <div class="testimonial-card premium-card rounded-2xl p-6 stagger-item">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-forsythia/20 flex items-center justify-center text-nocturnal dark:text-arctic-powder font-bold text-lg flex-shrink-0">MS</div>
+                        <div>
+                            <p class="font-body-md font-bold text-nocturnal dark:text-arctic-powder">Mike Smith</p>
+                            <p class="font-label-xs text-label-xs text-nocturnal/60 dark:text-arctic-powder/60">VP Engineering, Core.OS</p>
+                        </div>
+                    </div>
+                    <div class="flex text-forsythia mb-3">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                    <p class="font-body-md text-nocturnal/80 dark:text-arctic-powder/80 italic">"The AI-powered anomaly detection caught issues we would have missed. This is a game-changer."</p>
+                </div>
+                
+                <div class="testimonial-card premium-card rounded-2xl p-6 stagger-item">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-forsythia/20 flex items-center justify-center text-nocturnal dark:text-arctic-powder font-bold text-lg flex-shrink-0">SR</div>
+                        <div>
+                            <p class="font-body-md font-bold text-nocturnal dark:text-arctic-powder">Sarah Rodriguez</p>
+                            <p class="font-label-xs text-label-xs text-nocturnal/60 dark:text-arctic-powder/60">Data Architect, Nexus</p>
+                        </div>
+                    </div>
+                    <div class="flex text-forsythia mb-3">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                    <p class="font-body-md text-nocturnal/80 dark:text-arctic-powder/80 italic">"Finally, a platform that gives us complete visibility into our data pipelines. The terminal interface is beautiful."</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PRICING SECTION -->
+        <section class="py-stack-xl bg-arctic-powder dark:bg-oceanic-noir reveal section-transition" id="pricing" aria-labelledby="pricing-title">
+            <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                <div class="text-center mb-stack-xl">
+                    <span class="font-label-xs text-label-xs text-forsythia uppercase tracking-widest">Pricing</span>
+                    <h2 id="pricing-title" class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mt-2">Simple pricing, global currency</h2>
+                    <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60 max-w-2xl mx-auto mt-4">
+                        Pick a plan that fits your data volume. Switch currency or billing cycle — only the numbers move.
+                    </p>
+                    
+                    <!-- Pricing Controls -->
+                    <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+                        <!-- Billing Toggle -->
+                        <div class="flex items-center gap-1 bg-mystic-mint dark:bg-oceanic-noir/50 p-1 rounded-xl border border-nocturnal/10 dark:border-arctic-powder/10" role="group" aria-label="Billing period">
+                            <button class="px-5 py-2 rounded-lg font-button text-button bg-white dark:bg-oceanic-noir text-nocturnal dark:text-arctic-powder shadow-sm transition-all text-sm currency-btn active" id="btn-monthly" onclick="updateBilling('monthly')" aria-pressed="true">
+                                Monthly
+                            </button>
+                            <button class="px-5 py-2 rounded-lg font-button text-button text-nocturnal/60 dark:text-arctic-powder/60 hover:text-nocturnal dark:hover:text-arctic-powder transition-all text-sm currency-btn" id="btn-annual" onclick="updateBilling('annual')" aria-pressed="false">
+                                Annual
+                            </button>
+                        </div>
+                        
+                        <!-- Currency Selector -->
+                        <div class="flex items-center gap-1 bg-mystic-mint dark:bg-oceanic-noir/50 p-1 rounded-xl border border-nocturnal/10 dark:border-arctic-powder/10">
+                            <button class="px-4 py-2 rounded-lg font-button text-button bg-white dark:bg-oceanic-noir text-nocturnal dark:text-arctic-powder shadow-sm transition-all text-sm currency-btn active" onclick="updateCurrency('USD')" data-currency="USD" aria-pressed="true">
+                                USD
+                            </button>
+                            <button class="px-4 py-2 rounded-lg font-button text-button text-nocturnal/60 dark:text-arctic-powder/60 hover:text-nocturnal dark:hover:text-arctic-powder transition-all text-sm currency-btn" onclick="updateCurrency('INR')" data-currency="INR" aria-pressed="false">
+                                INR
+                            </button>
+                            <button class="px-4 py-2 rounded-lg font-button text-button text-nocturnal/60 dark:text-arctic-powder/60 hover:text-nocturnal dark:hover:text-arctic-powder transition-all text-sm currency-btn" onclick="updateCurrency('EUR')" data-currency="EUR" aria-pressed="false">
+                                EUR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pricing Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <!-- Starter -->
+                    <div class="pricing-card p-8 flex flex-col hover-lift stagger-item">
+                        <div class="mb-4">
+                            <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder">Starter</h3>
+                            <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60 mt-2">For small teams automating their first pipelines.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex items-end gap-2">
+                                <span class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder" id="price-starter">$29.00</span>
+                                <span class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60">/mo</span>
+                            </div>
+                            <p class="font-label-xs text-label-xs text-nocturnal/40 dark:text-arctic-powder/40 mt-1" id="starter-annual">billed $348.00/yr</p>
+                        </div>
+                        
+                        <button class="w-full py-3 border-2 border-nocturnal/20 dark:border-arctic-powder/20 rounded-xl font-button text-button text-nocturnal dark:text-arctic-powder hover:bg-nocturnal hover:text-arctic-powder dark:hover:bg-arctic-powder dark:hover:text-oceanic-noir transition-all">
+                            Start free trial
+                        </button>
+                        
+                        <ul class="mt-6 space-y-3 border-t border-nocturnal/10 dark:border-arctic-powder/10 pt-6">
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                3 active pipelines
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                50K records / month
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                5 connectors
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Community support
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Professional - FEATURED -->
+                    <div class="pricing-card pricing-card featured p-8 flex flex-col hover-lift stagger-item relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 pricing-badge">
+                            Most Popular
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder">Professional</h3>
+                            <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60 mt-2">For growing teams scaling their data operations.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex items-end gap-2">
+                                <span class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder" id="price-pro">$99.00</span>
+                                <span class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60">/mo</span>
+                            </div>
+                            <p class="font-label-xs text-label-xs text-nocturnal/40 dark:text-arctic-powder/40 mt-1" id="pro-annual">billed $1,188.00/yr</p>
+                        </div>
+                        
+                        <button class="w-full py-3 bg-forsythia text-nocturnal dark:text-oceanic-noir rounded-xl font-button text-button hover:shadow-lg transition-all">
+                            Start free trial
+                        </button>
+                        
+                        <ul class="mt-6 space-y-3 border-t border-nocturnal/10 dark:border-arctic-powder/10 pt-6">
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Unlimited pipelines
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                5M records / month
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                50+ connectors
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Priority support
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Team collaboration
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Enterprise -->
+                    <div class="pricing-card p-8 flex flex-col hover-lift stagger-item">
+                        <div class="mb-4">
+                            <h3 class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder">Enterprise</h3>
+                            <p class="font-body-md text-body-md text-nocturnal/60 dark:text-arctic-powder/60 mt-2">For large organizations with custom needs.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="font-stats-lg text-stats-lg text-nocturnal dark:text-arctic-powder">Custom</span>
+                            <p class="font-label-xs text-label-xs text-nocturnal/40 dark:text-arctic-powder/40 mt-1">Contact us for pricing</p>
+                        </div>
+                        
+                        <button class="w-full py-3 border-2 border-nocturnal/20 dark:border-arctic-powder/20 rounded-xl font-button text-button text-nocturnal dark:text-arctic-powder hover:bg-nocturnal hover:text-arctic-powder dark:hover:bg-arctic-powder dark:hover:text-oceanic-noir transition-all">
+                            Contact sales
+                        </button>
+                        
+                        <ul class="mt-6 space-y-3 border-t border-nocturnal/10 dark:border-arctic-powder/10 pt-6">
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Unlimited everything
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Custom AI models
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Dedicated support
+                            </li>
+                            <li class="flex items-center gap-3 font-body-md text-sm text-nocturnal/70 dark:text-arctic-powder/70">
+                                <svg class="check-icon w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                SLA guarantee
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto reveal section-transition" id="faq" aria-labelledby="faq-title">
+            <div class="text-center mb-stack-xl">
+                <span class="font-label-xs text-label-xs text-forsythia uppercase tracking-widest">FAQ</span>
+                <h2 id="faq-title" class="font-headline-md text-headline-md text-nocturnal dark:text-arctic-powder mt-2">Frequently asked questions</h2>
+            </div>
+            
+            <div class="space-y-3">
+                <div class="faq-item premium-card rounded-2xl border border-nocturnal/10 dark:border-arctic-powder/10 overflow-hidden stagger-item">
+                    <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-1">
+                        <span class="font-headline-md text-body-lg font-bold text-nocturnal dark:text-arctic-powder">What data sources are supported?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform flex-shrink-0 text-nocturnal dark:text-arctic-powder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 pb-6" id="faq-content-1">
+                        <p class="font-body-md text-nocturnal/70 dark:text-arctic-powder/70">AetherFlow supports PostgreSQL, MySQL, Stripe, Salesforce, Shopify, and 50+ other data sources.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item premium-card rounded-2xl border border-nocturnal/10 dark:border-arctic-powder/10 overflow-hidden stagger-item">
+                    <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-2">
+                        <span class="font-headline-md text-body-lg font-bold text-nocturnal dark:text-arctic-powder">Is my data secure?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform flex-shrink-0 text-nocturnal dark:text-arctic-powder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 pb-6" id="faq-content-2">
+                        <p class="font-body-md text-nocturnal/70 dark:text-arctic-powder/70">Absolutely. All data is encrypted with AES-256 in transit and at rest. We're SOC 2 compliant.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item premium-card rounded-2xl border border-nocturnal/10 dark:border-arctic-powder/10 overflow-hidden stagger-item">
+                    <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-3">
+                        <span class="font-headline-md text-body-lg font-bold text-nocturnal dark:text-arctic-powder">Is there a free trial?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform flex-shrink-0 text-nocturnal dark:text-arctic-powder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 pb-6" id="faq-content-3">
+                        <p class="font-body-md text-nocturnal/70 dark:text-arctic-powder/70">Yes! Start with a 14-day free trial of our Professional plan. No credit card required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item premium-card rounded-2xl border border-nocturnal/10 dark:border-arctic-powder/10 overflow-hidden stagger-item">
+                    <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-4">
+                        <span class="font-headline-md text-body-lg font-bold text-nocturnal dark:text-arctic-powder">How fast is the AI analysis?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform flex-shrink-0 text-nocturnal dark:text-arctic-powder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 pb-6" id="faq-content-4">
+                        <p class="font-body-md text-nocturnal/70 dark:text-arctic-powder/70">Most analyses complete in under 30 seconds. For large datasets, it typically takes 1-2 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="py-stack-xl px-margin-mobile reveal section-transition" aria-labelledby="cta-title">
+            <div class="max-w-4xl mx-auto bg-forsythia rounded-2xl p-12 text-center text-nocturnal dark:text-oceanic-noir relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 id="cta-title" class="font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md">Ready to build intelligent data pipelines?</h2>
+                    <p class="font-body-lg text-body-lg mb-stack-lg opacity-90">Join 500+ teams already using AetherFlow to automate their data operations.</p>
+                    <button class="bg-oceanic-noir text-arctic-powder px-10 py-5 rounded-xl font-button text-button text-lg hover-lift">
+                        Start Free Trial
+                    </button>
+                    <p class="font-label-xs text-label-xs mt-4 opacity-70">No credit card required · 14-day free trial</p>
+                </div>
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Back to Top -->
+    <button class="back-to-top p-3 rounded-xl shadow-lg hover:scale-105 transition-all duration-200" id="back-to-top" aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="w-full bg-oceanic-noir text-arctic-powder py-stack-xl reveal" role="contentinfo">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-stack-xl px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto text-left">
+            <div class="col-span-2 md:col-span-1">
+                <span class="font-display-lg text-[24px] text-forsythia mb-stack-lg block">AetherFlow</span>
+                <p class="font-body-md text-body-md text-arctic-powder/60 max-w-[200px]">Intelligent data pipelines for the AI era.</p>
+            </div>
+            <div>
+                <h4 class="font-label-xs text-label-xs text-forsythia mb-4 uppercase tracking-wider">Product</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#demo">How It Works</a>
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#features">Features</a>
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#pricing">Pricing</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-label-xs text-label-xs text-forsythia mb-4 uppercase tracking-wider">Company</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#">About</a>
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#">Careers</a>
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#">Blog</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-label-xs text-label-xs text-forsythia mb-4 uppercase tracking-wider">Legal</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#">Privacy Policy</a>
+                    <a class="font-body-md text-body-md text-arctic-powder/60 hover:text-forsythia transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-label-xs text-label-xs text-forsythia mb-4 uppercase tracking-wider">Connect</h4>
+                <div class="flex gap-4">
+                    <img class="icon-small opacity-60 cursor-pointer hover:opacity-100 invert transition-opacity duration-200" src="/frontend/public/assets/icons/x-mark.svg" alt="Twitter"/>
+                    <img class="icon-small opacity-60 cursor-pointer hover:opacity-100 invert transition-opacity duration-200" src="/frontend/public/assets/icons/chevron-left.svg" alt="LinkedIn"/>
+                    <img class="icon-small opacity-60 cursor-pointer hover:opacity-100 invert transition-opacity duration-200" src="/frontend/public/assets/icons/link.svg" alt="GitHub"/>
+                </div>
+            </div>
+        </div>
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-stack-lg border-t border-arctic-powder/10 text-center">
+            <p class="font-label-xs text-label-xs text-arctic-powder/40">© 2024 AetherFlow AI. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // --- THREE.JS HERO SCENE ---
+        const container = document.getElementById('hero-canvas-container');
+        const width = container.clientWidth || window.innerWidth;
+        const height = container.clientHeight || window.innerHeight;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domPixelRatio ? renderer.domElement : renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xFFC801, 1);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const geometry = new THREE.IcosahedronGeometry(2, 2);
+        const material = new THREE.MeshPhongMaterial({
+            color: 0x114C5A,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.1
+        });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 500;
+        const posArray = new Float32Array(particlesCount * 3);
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 10;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0xFFC801
+        });
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        camera.position.z = 5;
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        window.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) - 0.5;
+            mouseY = (event.clientY / window.innerHeight) - 0.5;
+            const preview = document.querySelector('.hero-preview');
+            if (preview) {
+                const xShift = mouseX * 20;
+                const yShift = mouseY * 20;
+                preview.style.transform = `translate(${xShift}px, ${yShift}px)`;
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            const newWidth = window.innerWidth;
+            const newHeight = window.innerHeight;
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newWidth, newHeight);
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            sphere.rotation.y += 0.002;
+            sphere.rotation.x += 0.001;
+            particlesMesh.rotation.y += mouseX * 0.01;
+            particlesMesh.rotation.x += -mouseY * 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // --- PARTNER CAROUSEL ---
+        const partnerDots = document.querySelectorAll('.partner-dot');
+        const partnerTrack = document.getElementById('partner-track');
+        let currentPartnerIndex = 0;
+        let carouselInterval;
+
+        function updatePartnerCarousel(index) {
+            partnerDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            const offset = index * 25;
+            partnerTrack.style.transform = `translateX(-${offset}%)`;
+        }
+
+        partnerDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.dataset.index);
+                currentPartnerIndex = index;
+                updatePartnerCarousel(index);
+                clearInterval(carouselInterval);
+                startCarousel();
+            });
+        });
+
+        function startCarousel() {
+            carouselInterval = setInterval(() => {
+                currentPartnerIndex = (currentPartnerIndex + 1) % partnerDots.length;
+                updatePartnerCarousel(currentPartnerIndex);
+            }, 4000);
+        }
+        startCarousel();
+
+        // --- SCROLL REVEAL ---
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal, .stagger-item').forEach(el => revealObserver.observe(el));
+
+        // --- HERO SEQUENCE ---
+        setTimeout(() => {
+            document.querySelectorAll('.hero-badge, .hero-heading, .hero-description, .hero-cta, .hero-stats, .hero-preview')
+                .forEach(el => el.classList.add('active'));
+        }, 100);
+
+        // --- NAVIGATION ---
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+            
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.dataset.section === section.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+            
+            const backToTop = document.getElementById('back-to-top');
+            if (currentScroll > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- STAT COUNTERS ---
+        const counters = document.querySelectorAll('.stat-number');
+        let countersAnimated = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    counters.forEach(counter => {
+                        const target = parseFloat(counter.dataset.target);
+                        const duration = 1500;
+                        const startTime = performance.now();
+                        
+                        function updateCounter(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = eased * target;
+                            
+                            if (target % 1 === 0) {
+                                counter.textContent = Math.round(current);
+                            } else {
+                                counter.textContent = current.toFixed(1);
+                            }
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(updateCounter);
+                            }
+                        }
+                        requestAnimationFrame(updateCounter);
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        counters.forEach(el => counterObserver.observe(el));
+
+        // --- INTERACTIVE DEMO ---
+        const uploadBtn = document.getElementById('upload-btn');
+        const uploadZone = document.getElementById('upload-zone');
+        const stepUpload = document.getElementById('step-upload');
+        const stepProcessing = document.getElementById('step-processing');
+        const stepResults = document.getElementById('step-results');
+        const stepDashboard = document.getElementById('step-dashboard');
+        const progressFill = document.getElementById('progress-fill');
+        const progressPercent = document.getElementById('progress-percent');
+        const logContainer = document.getElementById('log-container');
+        const dashboardBtn = document.getElementById('dashboard-btn');
+        const resetBtn = document.getElementById('reset-demo');
+        
+        const logs = [
+            { text: '✓ Connecting to data source...', delay: 0 },
+            { text: '✓ Reading spreadsheet...', delay: 800 },
+            { text: '✓ Detecting schema...', delay: 1600 },
+            { text: '✓ Cleaning duplicate records...', delay: 2400 },
+            { text: '✓ Standardizing formats...', delay: 3200 },
+            { text: '✓ Running AI analysis...', delay: 4000 },
+            { text: '✓ Detecting trends...', delay: 4800 },
+            { text: '✓ Building dashboard...', delay: 5600 },
+            { text: '✓ Analysis Complete 🎉', delay: 6400 }
+        ];
+
+        let isProcessing = false;
+
+        function updateStep(step) {
+            const dots = document.querySelectorAll('[id^="step-dot-"]');
+            const labels = document.querySelectorAll('[id^="step-label-"]');
+            
+            dots.forEach((dot, i) => {
+                const num = i + 1;
+                if (num < step) {
+                    dot.className = 'w-3 h-3 rounded-full bg-forsythia';
+                    labels[i].className = 'text-xs font-medium text-nocturnal dark:text-arctic-powder';
+                } else if (num === step) {
+                    dot.className = 'w-3 h-3 rounded-full bg-forsythia animate-pulse';
+                    labels[i].className = 'text-xs font-medium text-forsythia';
+                } else {
+                    dot.className = 'w-3 h-3 rounded-full bg-nocturnal/20 dark:bg-arctic-powder/20';
+                    labels[i].className = 'text-xs font-medium text-nocturnal/40 dark:text-arctic-powder/40';
+                }
+            });
+        }
+
+        function showStep(step) {
+            stepUpload.style.display = 'none';
+            stepProcessing.style.display = 'none';
+            stepResults.style.display = 'none';
+            stepDashboard.style.display = 'none';
+            
+            if (step === 1) {
+                stepUpload.style.display = 'block';
+                updateStep(1);
+            } else if (step === 2) {
+                stepProcessing.style.display = 'block';
+                updateStep(2);
+            } else if (step === 3) {
+                stepResults.style.display = 'block';
+                updateStep(3);
+                setTimeout(() => {
+                    document.querySelectorAll('.success-card').forEach((card, i) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, parseInt(card.dataset.delay) || i * 100);
+                    });
+                }, 300);
+            } else if (step === 4) {
+                stepDashboard.style.display = 'block';
+                updateStep(4);
+                setTimeout(() => {
+                    document.querySelectorAll('.dashboard-widget').forEach((widget, i) => {
+                        setTimeout(() => {
+                            widget.classList.add('visible');
+                        }, parseInt(widget.dataset.delay) || i * 100);
+                    });
+                }, 300);
+            }
+        }
+
+        function runProcessing() {
+            if (isProcessing) return;
+            isProcessing = true;
+            
+            showStep(2);
+            logContainer.innerHTML = '';
+            progressFill.style.width = '0%';
+            progressPercent.textContent = '0%';
+            
+            logs.forEach((log, index) => {
+                setTimeout(() => {
+                    const div = document.createElement('div');
+                    div.className = 'terminal-log visible';
+                    div.textContent = log.text;
+                    logContainer.appendChild(div);
+                    
+                    const progress = ((index + 1) / logs.length) * 100;
+                    progressFill.style.width = progress + '%';
+                    progressPercent.textContent = Math.round(progress) + '%';
+                    
+                    if (index === logs.length - 1) {
+                        setTimeout(() => {
+                            showStep(3);
+                            isProcessing = false;
+                        }, 600);
+                    }
+                }, log.delay);
+            });
+        }
+
+        uploadBtn.addEventListener('click', runProcessing);
+        uploadZone.addEventListener('click', (e) => {
+            if (e.target === uploadBtn || uploadBtn.contains(e.target)) return;
+            runProcessing();
+        });
+
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            runProcessing();
+        });
+
+        dashboardBtn.addEventListener('click', () => {
+            showStep(4);
+        });
+
+        resetBtn.addEventListener('click', () => {
+            showStep(1);
+            document.querySelectorAll('.success-card').forEach(c => c.classList.remove('visible'));
+            document.querySelectorAll('.dashboard-widget').forEach(w => w.classList.remove('visible'));
+            isProcessing = false;
+        });
+
+        // --- PRICING ENGINE ---
+        const pricingConfig = {
+            base: { starter: 29, pro: 99 },
+            regionalTariff: { US: 1, EU: 1.2, ASIA: 0.9 },
+            currencies: {
+                USD: { symbol: '$', rate: 1 },
+                INR: { symbol: '₹', rate: 83 },
+                EUR: { symbol: '€', rate: 0.92 }
+            }
+        };
+        let currentBilling = 'monthly';
+        let currentCurrency = 'USD';
+
+        function updatePricing() {
+            const currency = pricingConfig.currencies[currentCurrency];
+            const discount = currentBilling === 'annual' ? 0.8 : 1;
+            const tariff = pricingConfig.regionalTariff.US;
+            
+            const starterPrice = (pricingConfig.base.starter * tariff * currency.rate * discount);
+            const proPrice = (pricingConfig.base.pro * tariff * currency.rate * discount);
+            
+            const starterEl = document.getElementById('price-starter');
+            const proEl = document.getElementById('price-pro');
+            if (starterEl) starterEl.innerText = `${currency.symbol}${starterPrice.toFixed(2)}`;
+            if (proEl) proEl.innerText = `${currency.symbol}${proPrice.toFixed(2)}`;
+            
+            const starterAnnual = starterPrice * 12;
+            const proAnnual = proPrice * 12;
+            
+            const starterAnnualEl = document.getElementById('starter-annual');
+            const proAnnualEl = document.getElementById('pro-annual');
+            if (starterAnnualEl) starterAnnualEl.innerText = `billed ${currency.symbol}${starterAnnual.toFixed(2)}/yr`;
+            if (proAnnualEl) proAnnualEl.innerText = `billed ${currency.symbol}${proAnnual.toFixed(2)}/yr`;
+        }
+
+        function updateBilling(period) {
+            currentBilling = period;
+            const monthlyBtn = document.getElementById('btn-monthly');
+            const annualBtn = document.getElementById('btn-annual');
+            
+            monthlyBtn.classList.toggle('active', period === 'monthly');
+            annualBtn.classList.toggle('active', period === 'annual');
+            monthlyBtn.setAttribute('aria-pressed', period === 'monthly');
+            annualBtn.setAttribute('aria-pressed', period === 'annual');
+            
+            document.querySelectorAll('#btn-monthly, #btn-annual').forEach(btn => {
+                btn.classList.toggle('bg-white', btn.classList.contains('active'));
+                btn.classList.toggle('shadow-sm', btn.classList.contains('active'));
+            });
+            
+            updatePricing();
+        }
+
+        function updateCurrency(code) {
+            currentCurrency = code;
+            document.querySelectorAll('[data-currency]').forEach(btn => {
+                const isActive = btn.dataset.currency === code;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', isActive);
+                btn.classList.toggle('bg-white', isActive);
+                btn.classList.toggle('shadow-sm', isActive);
+            });
+            updatePricing();
+        }
+
+        // --- FAQ ACCORDION ---
+        function toggleFAQ(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('button').setAttribute('aria-expanded', 'false');
+            });
+            
+            if (!isActive) {
+                item.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // --- MOBILE MENU ---
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileClose = document.getElementById('mobile-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileOverlay.classList.add('open');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileOverlay.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        mobileToggle.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // --- THEME TOGGLE ---
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const icon = themeToggle.querySelector('svg');
+            if (document.documentElement.classList.contains('dark')) {
+                icon.innerHTML = '<path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>';
+            } else {
+                icon.innerHTML = '<path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>';
+            }
+        });
+
+        // Initialize
+        showStep(1);
+        updatePricing();
+        document.querySelector('[data-currency="USD"]')?.classList.add('active');
+    </script>
+</body>
+</html>
