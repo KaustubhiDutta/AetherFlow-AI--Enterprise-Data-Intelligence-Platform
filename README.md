@@ -8,7 +8,7 @@ AetherFlow AI is a modern, enterprise-inspired **AI Data Automation Platform Lan
 
 ## 🌐 Live Demo
 
-🔗 **Demo:** 
+🔗 **Demo:** https://aetherflow122.netlify.app/
 
 ---
 
@@ -200,7 +200,6 @@ while maintaining a unique developer-focused identity.
 **Kaustubhi Dutta**
 
 * GitHub: https://github.com/KaustubhiDutta
-* LinkedIn: *Add your LinkedIn profile here*
 
 ---
 
